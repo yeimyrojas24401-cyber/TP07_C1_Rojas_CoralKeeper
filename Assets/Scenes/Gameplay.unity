@@ -4058,6 +4058,7 @@ GameObject:
   m_Component:
   - component: {fileID: 610690545}
   - component: {fileID: 610690543}
+  - component: {fileID: 610690546}
   m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
@@ -4139,6 +4140,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1532433529}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &610690546
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610690542}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b3966f572950c954392e4d5201e85e9f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -4317,6 +4340,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1532433529}
   - component: {fileID: 1532433528}
+  - component: {fileID: 1532433533}
   - component: {fileID: 1532433532}
   - component: {fileID: 1532433531}
   - component: {fileID: 1532433530}
@@ -4443,6 +4467,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08191a9fcf8fe284a992ff397d237c28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMarker
+--- !u!114 &1532433533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532433527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba82c2f03d89bad459ad42425d76e629, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimation
+  rb: {fileID: 1532433530}
+  animator: {fileID: 610690546}
 --- !u!1 &1723551740
 GameObject:
   m_ObjectHideFlags: 0
