@@ -11,14 +11,17 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         coralProgress.ResetProgress();
+        gameResult.ResetResult();
+        winText.text = "";
     }
     private void OnEnable()
     {
-        levelGoal.OnReefRestored += HandleReefRestored();
+        levelGoal.OnReefRestored += HandleReefRestored;
     }
     private void OnDisable()
     {
-        levelGoal.OnReefRestored -= HandleReefRestored();
+        if (levelGoal != null)
+        levelGoal.OnReefRestored -= HandleReefRestored;
     }
     private void HandleReefRestored()
     {

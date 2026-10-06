@@ -1,5 +1,5 @@
 using UnityEngine;
-[CreateAssetMenu(fileName = "GameResultsData", menuName = "Data/Game/GameResulsData")]
+[CreateAssetMenu(fileName = "GameResultData", menuName = "Data/Game/GameResultData")]
 public class GameResultSo : ScriptableObject
 {
     [SerializeField] private bool won;

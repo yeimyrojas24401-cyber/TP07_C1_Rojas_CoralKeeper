@@ -29,5 +29,10 @@ public class LevelGoal : MonoBehaviour
             OnReefRestored?.Invoke();
         }
     }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (!other.TryGetComponent<PlayerMarker>(out _)) return;
+        messageText.text = "";
+    }
 
 }
