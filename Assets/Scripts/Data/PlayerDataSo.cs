@@ -29,5 +29,7 @@ public class PlayerDataSo : ScriptableObject
     [SerializeField] private float invulnerabilityDuration = 1.5f;
     public float InvulnerabilityDuration => invulnerabilityDuration;
 
+    [SerializeField] private float blinkInterval = 0.1f;
+    public float BlinkInterval => blinkInterval;
 
 }
