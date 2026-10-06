@@ -24,9 +24,9 @@ public class PlayerDataSo : ScriptableObject
     public float TimeBetweenSwims => timeBetweenSwims;
 
     [Header("Health")]
-    private int maxHealth = 5;
+    [SerializeField] private int maxHealth = 5;
     public int MaxHealth => maxHealth;
-    private float invulnerabilityDuration = 1.5f;
+    [SerializeField] private float invulnerabilityDuration = 1.5f;
     public float InvulnerabilityDuration => invulnerabilityDuration;
 
 
