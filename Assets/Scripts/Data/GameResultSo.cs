@@ -5,11 +5,11 @@ public class GameResultSo : ScriptableObject
     [SerializeField] private bool won;
     public bool Won => won;
 
-    private void SetResult(bool value)
+    public void SetResult(bool value)
     {
-        won = false;
+        won = value;
     }
-    private void ResetResult()
+    public void ResetResult()
     {
         won = false;
     }    
