@@ -32,4 +32,8 @@ public class PlayerDataSo : ScriptableObject
     [SerializeField] private float blinkInterval = 0.1f;
     public float BlinkInterval => blinkInterval;
 
+    [Header("Shooting")]
+    [SerializeField] private KeyCode[] shootKeys = { KeyCode.J, KeyCode.Mouse0 };
+    public float timeBetweenShots = 0.3f;
+    private Vector2 shootOffset = new Vector2(0.6f, 0f);
 }

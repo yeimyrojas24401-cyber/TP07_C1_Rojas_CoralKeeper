@@ -6,6 +6,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private SpriteRenderer spriteRenderer;
 
+    private float facingDirection = 1f;
+    public float FacingDirection => facingDirection;
+
     private float moveInput;
     bool swimRequested;
     float swimTimer;
@@ -32,7 +35,11 @@ public class PlayerMovement : MonoBehaviour
             swimTimer = data.TimeBetweenSwims;
         }
         if (moveInput != 0f)
-            spriteRenderer.flipX = moveInput < 0f;
+        {
+            facingDirection = moveInput;
+            spriteRenderer.flipX = facingDirection < 0f;
+        }
+
     }
     private void FixedUpdate()
     {
