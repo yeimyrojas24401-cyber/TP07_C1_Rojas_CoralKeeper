@@ -1,5 +1,5 @@
 using UnityEngine;
-[CreateAssetMenu( fileName = "ProjectileDataSo", menuName = "Data/Game/ProjectileData")]
+[CreateAssetMenu( fileName = "ProjectileData", menuName = "Data/Game/ProjectileData")]
 public class ProjectileDataSo : ScriptableObject
 {
     [SerializeField] private float speed = 8f;
@@ -9,6 +9,7 @@ public class ProjectileDataSo : ScriptableObject
 
     [SerializeField] private LayerMask hitLayers;
     public LayerMask HitLayers => hitLayers;
-    [SerializeField] private int damage;
+    [SerializeField] private int damage = 1;
+    public int Damage => damage;
 
 }
