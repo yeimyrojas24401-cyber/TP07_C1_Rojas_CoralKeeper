@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: TestEnemyData
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDataSo
   maxHealth: 4
-  deathVfx: {fileID: 0}
+  deathVfx: {fileID: 3502803043897926288, guid: 81feb8e3352495849ad2752ba3f4ee36, type: 3}
