@@ -1,5 +1,5 @@
 using UnityEngine;
-[CreateAssetMenu(fileName = "EnemyDataSo", menuName = "Data,Enemies, EnemyData")]
+[CreateAssetMenu(fileName = "EnemyData", menuName = "Data/Enemies/EnemyData")]
 public class EnemyDataSo : ScriptableObject
 {
     [SerializeField] private int maxHealth = 4;

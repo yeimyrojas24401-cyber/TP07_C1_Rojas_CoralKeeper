@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -22,11 +21,11 @@ public class EnemyHealth : MonoBehaviour
         OnHealthChanged?.Invoke(currentHealth);
         if (currentHealth <= 0)
         {
-            Died();
+            Die();
         }
     }
 
-    private void Died()
+    private void Die()
     {
         isDead = true;
         Instantiate(enemyData.DeathVfx, transform.position, Quaternion.identity);

@@ -15,14 +15,16 @@ public class Projectile : MonoBehaviour
         float step = projectileData.Speed * Time.fixedDeltaTime;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, step, projectileData.HitLayers);
         Debug.DrawRay(transform.position, direction * step, Color.red);
-
         if (hit.collider != null)
         {
-            Debug.Log($"Burbuja choco con {hit.collider.name}");
+            if (hit.collider.TryGetComponent(out EnemyHealth enemyHealth))
+            {
+                enemyHealth.TakeDamage(projectileData.Damage);
+            }
             Destroy(gameObject);
             return;
-        }
 
+        }
         transform.position += (Vector3)(direction * step);
     }
     public void Init(Vector2 dir)
