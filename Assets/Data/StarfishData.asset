@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: StarfishData
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDataSo
   maxHealth: 4
-  moveSpeed: 1.5
+  moveSpeed: 5
   deathVfx: {fileID: 3502803043897926288, guid: 81feb8e3352495849ad2752ba3f4ee36, type: 3}

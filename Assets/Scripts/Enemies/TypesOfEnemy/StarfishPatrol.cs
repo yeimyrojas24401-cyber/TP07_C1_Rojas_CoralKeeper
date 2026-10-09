@@ -18,7 +18,7 @@ public class StarfishPatrol : MonoBehaviour
 
     private void Start()
     {
-        positionA = (pointA.position);
+        positionA = (pointA.position); //recuerda que pointA es hijo de starfish por eso guardamos en Start
         positionB = (pointB.position);
 
         currentTarget = positionB;
