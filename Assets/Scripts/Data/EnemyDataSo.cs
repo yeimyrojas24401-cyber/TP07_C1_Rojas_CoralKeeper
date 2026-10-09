@@ -13,7 +13,7 @@ public class EnemyDataSo : ScriptableObject
     public float MoveSpeed => moveSpeed;
 
     [Header("Moray eel chase general settings")]
-    [SerializeField] private float detectRange;
+    [SerializeField] private float detectRange = 5;
     public float DetectRange => detectRange;
 
     [SerializeField] private float chaseSpeed = 3.5f;
