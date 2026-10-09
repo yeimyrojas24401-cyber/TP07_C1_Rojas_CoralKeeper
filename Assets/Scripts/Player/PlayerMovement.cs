@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
     private float moveInput;
     bool swimRequested;
+    private bool diveHeld;
     float swimTimer;
 
     private void Update()
@@ -34,6 +35,9 @@ public class PlayerMovement : MonoBehaviour
             swimRequested = true;
             swimTimer = playerData.TimeBetweenSwims;
         }
+
+        diveHeld = AnyKeyHeld(playerData.DiveKeys);
+
         if (moveInput != 0f)
         {
             facingDirection = moveInput;
@@ -44,6 +48,11 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.linearVelocity = new Vector2(moveInput * playerData.MoveSpeed, rb.linearVelocity.y);
+
+        if (diveHeld)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, -playerData.DiveSpeed);
+        }
 
         if (swimRequested)
         {

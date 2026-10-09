@@ -23,6 +23,12 @@ public class PlayerDataSo : ScriptableObject
     [SerializeField] private float timeBetweenSwims = 0.35f;
     public float TimeBetweenSwims => timeBetweenSwims;
 
+    [SerializeField] private KeyCode[] diveKeys = { KeyCode.S, KeyCode.DownArrow };
+    public KeyCode[] DiveKeys => diveKeys;
+
+    [SerializeField] private float diveSpeed = 4f;
+    public float DiveSpeed => diveSpeed;
+
     [Header("Health")]
     [SerializeField] private int maxHealth = 5;
     public int MaxHealth => maxHealth;
