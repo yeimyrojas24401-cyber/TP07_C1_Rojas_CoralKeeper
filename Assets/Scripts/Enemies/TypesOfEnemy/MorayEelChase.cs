@@ -61,7 +61,7 @@ private enum MorayEelState
         rb.linearVelocity = direction * speed;
         spriteRenderer.flipX = direction.x < 0f;
     }
-    //agregado para visualizar por ahora el tamano de mi circulo 
+    //adding so i can visualizar el tamano de mi circulo en mi scene
     private void OnDrawGizmosSelected()                      
     {
         if (morayEelData == null) return;

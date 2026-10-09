@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 151a6dd9084949744b5153ded9d517f3, type: 3}
   m_Name: MorayEelData
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDataSo
-  maxHealth: 4
-  deathVfx: {fileID: 0}
+  maxHealth: 5
+  deathVfx: {fileID: 3502803043897926288, guid: 81feb8e3352495849ad2752ba3f4ee36, type: 3}
   moveSpeed: 1
-  detectRange: 0
+  detectRange: 7
   chaseSpeed: 3.5
   returnSpeed: 2
