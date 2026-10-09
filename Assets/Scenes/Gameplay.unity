@@ -6047,7 +6047,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 117889a64ff43a84e89a1e9005c332d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  data: {fileID: 11400000, guid: 51f3fa7d2fde1404c8a99a745bc95380, type: 2}
+  playerData: {fileID: 11400000, guid: 51f3fa7d2fde1404c8a99a745bc95380, type: 2}
   rb: {fileID: 1532433530}
   spriteRenderer: {fileID: 610690543}
 --- !u!4 &1532433529

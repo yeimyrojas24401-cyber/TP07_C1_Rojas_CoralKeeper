@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private PlayerDataSo data;
+    [SerializeField] private PlayerDataSo playerData;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private SpriteRenderer spriteRenderer;
 
@@ -16,11 +16,11 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         moveInput = 0f;
-        if (AnyKeyHeld(data.RightKeys))
+        if (AnyKeyHeld(playerData.RightKeys))
         {
             moveInput += 1f;
         }
-        if (AnyKeyHeld(data.LeftKeys))
+        if (AnyKeyHeld(playerData.LeftKeys))
         {
             moveInput -= 1f;
         }
@@ -29,10 +29,10 @@ public class PlayerMovement : MonoBehaviour
         {
             swimTimer -= Time.deltaTime;
         }
-        if (AnyKeyDown(data.SwimUpKeys) && swimTimer <= 0f)
+        if (AnyKeyDown(playerData.SwimUpKeys) && swimTimer <= 0f)
         {
             swimRequested = true;
-            swimTimer = data.TimeBetweenSwims;
+            swimTimer = playerData.TimeBetweenSwims;
         }
         if (moveInput != 0f)
         {
@@ -43,12 +43,12 @@ public class PlayerMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2(moveInput * data.MoveSpeed, rb.linearVelocity.y);
+        rb.linearVelocity = new Vector2(moveInput * playerData.MoveSpeed, rb.linearVelocity.y);
 
         if (swimRequested)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
-            rb.AddForce(Vector2.up * data.SwimUpForce, ForceMode2D.Impulse);
+            rb.AddForce(Vector2.up * playerData.SwimUpForce, ForceMode2D.Impulse);
             swimRequested = false;
         }
     }
