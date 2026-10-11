@@ -3,6 +3,8 @@ using UnityEngine;
 public class PlayerShooter : MonoBehaviour
 {
     [SerializeField] private PlayerDataSo playerData;
+    [SerializeField] private PlayerSymbiosis playerSymbiosis;
+
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private Projectile projectilePrefab;
 
@@ -14,7 +16,7 @@ public class PlayerShooter : MonoBehaviour
         if (AnyKeyHeld(playerData.ShootKeys) && shootTimer <= 0)
         {
             Shoot();
-            shootTimer = playerData.TimeBetweenShoots;
+            shootTimer = playerData.TimeBetweenShoots / playerSymbiosis.FireRateMultiplier;
         }
     }
     private bool AnyKeyHeld(KeyCode[] keys)

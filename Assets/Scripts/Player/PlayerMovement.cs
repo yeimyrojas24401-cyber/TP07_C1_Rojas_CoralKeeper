@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private PlayerDataSo playerData;
+    [SerializeField] private PlayerSymbiosis playerSymbiosis;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private SpriteRenderer spriteRenderer;
 
@@ -47,8 +48,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2(moveInput * playerData.MoveSpeed, rb.linearVelocity.y);
-
+        rb.linearVelocity = new Vector2(moveInput * playerData.MoveSpeed * playerSymbiosis.SpeedMultiplier, rb.linearVelocity.y);
         if (diveHeld)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, -playerData.DiveSpeed);
