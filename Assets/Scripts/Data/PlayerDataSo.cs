@@ -45,4 +45,16 @@ public class PlayerDataSo : ScriptableObject
     public float TimeBetweenShoots => timeBetweenShoots;
     [SerializeField] private Vector2 shootOffset = new Vector2(0.6f, 0f);
     public Vector2 ShootOffset => shootOffset;
+
+    [Header("Symbiosis")]
+    [SerializeField] private float symbiosisDuration = 8f;
+    public float SymbiosisDuration => symbiosisDuration;
+    [SerializeField] private float symbiosisSpeedMultiplier = 1.5f;
+    public float SymbiosisSpeedMultiplier => symbiosisSpeedMultiplier;
+    [SerializeField] private float symbiosisFireRateMultiplier = 2f;
+
+    public float SymbiosisFireRateMultiplier => symbiosisFireRateMultiplier;
+
+    [SerializeField] private Color symbiosisColor = new Color(1f, 0.6f, 0.9f);
+    public Color SymbiosisColor => symbiosisColor;
 }
