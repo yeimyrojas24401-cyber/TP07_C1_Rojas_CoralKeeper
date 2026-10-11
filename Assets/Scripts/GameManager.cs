@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour
     {
         coralProgress.ResetProgress();
         gameResult.ResetResult();
-        winText.text = "";
     }
     private void OnEnable()
     {
@@ -35,7 +34,6 @@ public class GameManager : MonoBehaviour
     }
     private void HandleReefRestored()
     {
-        winText.text = "Arrecife Restaurado!";
         EndGame(true);
     }
     private void HandlePlayerDied()
@@ -44,7 +42,7 @@ public class GameManager : MonoBehaviour
     }
     private void EndGame(bool won)
     {
-        if (gameEnded) return;
+        if (gameEnded) return; //guarda por si mi pez gana y en ese mismo momento muere
         gameEnded = true;
         gameResult.SetResult(won);
         Invoke(nameof(LoadGameOver), 1.5f);
