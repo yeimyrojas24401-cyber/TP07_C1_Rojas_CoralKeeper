@@ -12,7 +12,7 @@ public class Projectile : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float step = projectileData.Speed * Time.fixedDeltaTime;
+        float step = projectileData.Speed * Time.fixedDeltaTime; //tamano del rayo en un paso
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, step, projectileData.HitLayers);
         Debug.DrawRay(transform.position, direction * step, Color.red);
         if (hit.collider != null)

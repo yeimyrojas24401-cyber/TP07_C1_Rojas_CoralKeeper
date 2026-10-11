@@ -26,6 +26,21 @@ public class PlayerHealth : MonoBehaviour
         }
 
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        HandleContact(collision);
+    }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        HandleContact(collision);
+    }
+    private void HandleContact(Collision2D collision)
+    {
+        if (collision.gameObject.TryGetComponent<EnemyMarker>(out _))
+        {
+            TakeHit();
+        }
+    }
     public void TakeHit()
     {
         if (isDead || IsInvulnerable) return;
@@ -41,25 +56,10 @@ public class PlayerHealth : MonoBehaviour
         }
         invulnerabilityTimer = playerData.InvulnerabilityDuration;
     }
-    public void AddLife(int amount) //pickable para anemona
+    public void AddLife(int amount) //pickable para plankton
     {
         if (isDead) return;
         currentHealth = Mathf.Min(currentHealth + amount, playerData.MaxHealth);
         OnHealthChanged?.Invoke(CurrentHealth);
-    }
-    private void HandleContact(Collision2D collision)
-    {
-        if (collision.gameObject.TryGetComponent<EnemyMarker>(out _))
-        {
-            TakeHit();
-        }
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        HandleContact(collision);
-    }
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        HandleContact(collision);
     }
 }

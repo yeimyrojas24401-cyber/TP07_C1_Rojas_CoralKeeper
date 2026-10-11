@@ -9,7 +9,7 @@ public class PlayerBlink : MonoBehaviour
     private float blinkTimer;
     private void Update()
     {
-        if (!playerHealth.IsInvulnerable)
+        if (!playerHealth.IsInvulnerable) // si no es invulnerable *normnal)
         {
             spriteRenderer.enabled = true;
             return;
