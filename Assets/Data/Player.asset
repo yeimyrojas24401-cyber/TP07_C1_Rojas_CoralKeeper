@@ -18,3 +18,15 @@ MonoBehaviour:
   moveSpeed: 5
   swimUpForce: 10
   timeBetweenSwims: 0.35
+  diveKeys: 7300000012010000
+  diveSpeed: 4
+  maxHealth: 5
+  invulnerabilityDuration: 1.5
+  blinkInterval: 0.1
+  shootKeys: 6a00000043010000
+  timeBetweenShoots: 0.3
+  shootOffset: {x: 0.6, y: 0}
+  symbiosisDuration: 8
+  symbiosisSpeedMultiplier: 2
+  symbiosisFireRateMultiplier: 2
+  symbiosisColor: {r: 1, g: 0.6, b: 0.9, a: 1}
