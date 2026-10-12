@@ -21,6 +21,11 @@ public class Projectile : MonoBehaviour
             {
                 enemyHealth.TakeDamage(projectileData.Damage);
             }
+            if(projectileData.HitVfx != null)
+            {
+            Instantiate(projectileData.HitVfx, hit.point, Quaternion.identity);
+
+            }
             Destroy(gameObject);
             return;
 

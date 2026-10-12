@@ -18,3 +18,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 640
   damage: 1
+  hitVfx: {fileID: 3039207280708335173, guid: b5eb1b527aa88004bb10f07a83b35972, type: 3}

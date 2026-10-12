@@ -12,4 +12,7 @@ public class ProjectileDataSo : ScriptableObject
     [SerializeField] private int damage = 1;
     public int Damage => damage;
 
+    [SerializeField] private GameObject hitVfx;
+    public GameObject HitVfx => hitVfx;
+
 }
