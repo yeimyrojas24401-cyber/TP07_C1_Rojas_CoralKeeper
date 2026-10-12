@@ -167,6 +167,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5937356411663555137, guid: 3adf790b927d2bb4bbbda949835106f2, type: 3}
+      propertyPath: pickupClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3ab3c4acb6718184d96175c0cb191bf0, type: 3}
     - target: {fileID: 7249204558719339348, guid: 3adf790b927d2bb4bbbda949835106f2, type: 3}
       propertyPath: m_Name
       value: CoralFragment (4)
@@ -3981,6 +3985,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5937356411663555137, guid: 3adf790b927d2bb4bbbda949835106f2, type: 3}
+      propertyPath: pickupClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3ab3c4acb6718184d96175c0cb191bf0, type: 3}
     - target: {fileID: 7249204558719339348, guid: 3adf790b927d2bb4bbbda949835106f2, type: 3}
       propertyPath: m_Name
       value: CoralFragment (1)
@@ -4087,6 +4095,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5937356411663555137, guid: 3adf790b927d2bb4bbbda949835106f2, type: 3}
+      propertyPath: pickupClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3ab3c4acb6718184d96175c0cb191bf0, type: 3}
     - target: {fileID: 7249204558719339348, guid: 3adf790b927d2bb4bbbda949835106f2, type: 3}
       propertyPath: m_Name
       value: CoralFragment (3)
@@ -5788,6 +5800,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5937356411663555137, guid: 3adf790b927d2bb4bbbda949835106f2, type: 3}
+      propertyPath: pickupClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3ab3c4acb6718184d96175c0cb191bf0, type: 3}
     - target: {fileID: 7249204558719339348, guid: 3adf790b927d2bb4bbbda949835106f2, type: 3}
       propertyPath: m_Name
       value: CoralFragment (2)
@@ -7108,6 +7124,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2102551353950900867, guid: 25a09cb2150966643a225d6d38320032, type: 3}
+      propertyPath: pickupClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 11d3c2843619a914392be476913306ed, type: 3}
     - target: {fileID: 5467977438074955353, guid: 25a09cb2150966643a225d6d38320032, type: 3}
       propertyPath: m_Name
       value: PlanktonPickable (1)
@@ -7609,6 +7629,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2102551353950900867, guid: 25a09cb2150966643a225d6d38320032, type: 3}
+      propertyPath: pickupClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 11d3c2843619a914392be476913306ed, type: 3}
     - target: {fileID: 5467977438074955353, guid: 25a09cb2150966643a225d6d38320032, type: 3}
       propertyPath: m_Name
       value: PlanktonPickable
@@ -7706,6 +7730,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5937356411663555137, guid: 3adf790b927d2bb4bbbda949835106f2, type: 3}
+      propertyPath: pickupClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3ab3c4acb6718184d96175c0cb191bf0, type: 3}
     - target: {fileID: 7249204558719339348, guid: 3adf790b927d2bb4bbbda949835106f2, type: 3}
       propertyPath: m_Name
       value: CoralFragment
@@ -7723,6 +7751,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6553536341824655755, guid: c4d9fb3b3a9eb2c42b613cda217a99e6, type: 3}
+      propertyPath: pickupClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 605a844c26066c84c9cf3c6b44f00d75, type: 3}
     - target: {fileID: 6753132382548964775, guid: c4d9fb3b3a9eb2c42b613cda217a99e6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.1
@@ -7962,14 +7994,14 @@ SceneRoots:
   - {fileID: 1246780148}
   - {fileID: 333316498}
   - {fileID: 49355475}
+  - {fileID: 2257744165198925800}
+  - {fileID: 2036617197}
+  - {fileID: 3115770677820323299}
   - {fileID: 1006733886}
   - {fileID: 299679015}
   - {fileID: 1088236452}
   - {fileID: 5153408760387330169}
   - {fileID: 5691780423183165469}
   - {fileID: 6343888626252339563}
-  - {fileID: 2257744165198925800}
-  - {fileID: 2036617197}
-  - {fileID: 3115770677820323299}
   - {fileID: 1006876231}
   - {fileID: 622518592}

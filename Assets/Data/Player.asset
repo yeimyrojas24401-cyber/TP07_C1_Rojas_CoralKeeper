@@ -30,6 +30,6 @@ MonoBehaviour:
   symbiosisSpeedMultiplier: 2
   symbiosisFireRateMultiplier: 2
   symbiosisColor: {r: 1, g: 0.6, b: 0.9, a: 1}
-  swimClip: {fileID: 0}
-  shootClip: {fileID: 8300000, guid: 3a6056da7ebf18a40a5449baccdafc0a, type: 3}
-  hurtClip: {fileID: 0}
+  swimClip: {fileID: 8300000, guid: 33297d9dc632a134d9e2f3ffff379110, type: 3}
+  shootClip: {fileID: 8300000, guid: c2f942968163b7a41b38f55eafa55387, type: 3}
+  hurtClip: {fileID: 8300000, guid: 8b1dcb2cab39d7b4980a453b9d885801, type: 3}
