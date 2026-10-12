@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SymbiosisPickup
   pickupClip: {fileID: 8300000, guid: 605a844c26066c84c9cf3c6b44f00d75, type: 3}
-  pickupSfx: {fileID: 0}
+  pickupSfx: {fileID: 1906081325199161404, guid: d83f692b15aad5b4da6e747c93f5f23c, type: 3}
 --- !u!58 &7574615508775856653
 CircleCollider2D:
   m_ObjectHideFlags: 0

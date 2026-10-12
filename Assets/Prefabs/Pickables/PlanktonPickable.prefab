@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlanktonPickup
   pickupClip: {fileID: 8300000, guid: 11d3c2843619a914392be476913306ed, type: 3}
-  pickupSfx: {fileID: 0}
+  pickupSfx: {fileID: 1906081325199161404, guid: a9cd4e417a546384e8f4719ba748e3f0, type: 3}
   healAmount: 1
 --- !u!58 &1698197380066536318
 CircleCollider2D:

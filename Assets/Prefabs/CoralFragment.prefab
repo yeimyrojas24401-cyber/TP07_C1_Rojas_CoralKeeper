@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CoralFragment
   pickupClip: {fileID: 8300000, guid: 3ab3c4acb6718184d96175c0cb191bf0, type: 3}
-  pickupSfx: {fileID: 0}
+  pickupSfx: {fileID: 1906081325199161404, guid: 5250ee84d3d79a148b306581b6f14d2a, type: 3}
   coralProgress: {fileID: 11400000, guid: d0ed4c79840c23e469de3db0638f5e66, type: 2}
 --- !u!58 &8460803584283248374
 CircleCollider2D:
