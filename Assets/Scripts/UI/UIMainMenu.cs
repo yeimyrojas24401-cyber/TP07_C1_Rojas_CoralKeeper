@@ -40,6 +40,7 @@ btnExit.gameObject.SetActive(false);
         btnPlay.onClick.RemoveListener(OnBtnPlayClicked);
         btnSettings.onClick.RemoveListener(OnBtnSettingsClicked);
         btnCredits.onClick.RemoveListener(OnBtnCreditsClicked);
+        btnExit.onClick.RemoveListener(OnBtnExitClicked);
     }
 
     private void OnBtnPlayClicked()
