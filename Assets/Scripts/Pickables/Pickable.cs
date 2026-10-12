@@ -3,6 +3,7 @@ using UnityEngine;
 public abstract class Pickable : MonoBehaviour
 {
     [SerializeField] private AudioClip pickupClip;
+    [SerializeField] private ParticleSystem pickupSfx;
 
     private bool picked;
 
@@ -11,7 +12,8 @@ public abstract class Pickable : MonoBehaviour
         if (picked) return;
         if (!other.TryGetComponent<PlayerMarker>(out _)) return;
         picked =true;
-        if(other.TryGetComponent(out PlayerAudio playerAudio))
+        Instantiate(pickupSfx, transform.position, Quaternion.identity);
+        if (other.TryGetComponent(out PlayerAudio playerAudio))
         {
             playerAudio.PlaySfx(pickupClip);
         }
