@@ -12,6 +12,7 @@ public class PlayerShooter : MonoBehaviour
 
     private void Update()
     {
+        if (Time.timeScale == 0f) return;
         shootTimer -= Time.deltaTime;
         if (AnyKeyHeld(playerData.ShootKeys) && shootTimer <= 0)
         {
