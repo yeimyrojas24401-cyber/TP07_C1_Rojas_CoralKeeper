@@ -57,4 +57,12 @@ public class PlayerDataSo : ScriptableObject
 
     [SerializeField] private Color symbiosisColor = new Color(1f, 0.6f, 0.9f);
     public Color SymbiosisColor => symbiosisColor;
+
+    [Header("Audio")]
+    [SerializeField] private AudioClip swimClip;
+    public AudioClip SwimClip => swimClip;
+    [SerializeField] private AudioClip shootClip;
+    public AudioClip ShootClip => shootClip;
+    [SerializeField] private AudioClip hurtClip;
+    public AudioClip HurtClip => hurtClip;
 }

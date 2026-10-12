@@ -10,6 +10,9 @@ public class PlayerHealth : MonoBehaviour
     public bool IsInvulnerable => invulnerabilityTimer > 0; //responde a la necesidad de que no todo baje de un solo bajon
     private bool isDead;
 
+    [SerializeField] private PlayerAudio playerAudio;
+
+
     public event UnityAction<int> OnHealthChanged;
     public event UnityAction OnDied;
 
@@ -45,6 +48,9 @@ public class PlayerHealth : MonoBehaviour
     {
         if (isDead || IsInvulnerable) return;
         currentHealth--;
+
+        playerAudio.PlaySfx(playerData.HurtClip);
+
         OnHealthChanged?.Invoke(CurrentHealth);
         Debug.Log($"Vida: {currentHealth}");
         if (currentHealth <= 0)

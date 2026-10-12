@@ -8,11 +8,13 @@ public class PlayerShooter : MonoBehaviour
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private Projectile projectilePrefab;
 
+    [SerializeField] private PlayerAudio playerAudio;
+
     private float shootTimer;
 
     private void Update()
     {
-        if (Time.timeScale == 0f) return;
+        if (Time.timeScale == 0f) return; //audio related
         shootTimer -= Time.deltaTime;
         if (AnyKeyHeld(playerData.ShootKeys) && shootTimer <= 0)
         {
@@ -31,6 +33,9 @@ public class PlayerShooter : MonoBehaviour
         float dir = playerMovement.FacingDirection;
         Vector2 spawnPosition = (Vector2) transform.position + new Vector2(playerData.ShootOffset.x * dir, playerData.ShootOffset.y);
         Projectile bubble = Instantiate(projectilePrefab, spawnPosition, Quaternion.identity);
-        bubble.Init(new Vector2(dir, 0));
+
+        playerAudio.PlaySfx(playerData.ShootClip);
+
+        bubble.Init(new Vector2(dir, 0)); // Le hace saber la direccion
     }
 }

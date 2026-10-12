@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4237479805292056862}
   - component: {fileID: 5841551572829243287}
+  - component: {fileID: 6301242591259960986}
   - component: {fileID: 7887996988564565030}
   - component: {fileID: 2816719515896869939}
   - component: {fileID: 3714967394549047714}
@@ -54,6 +55,21 @@ MonoBehaviour:
   btnBack: {fileID: 3714967394549047714}
   currentPanel: {fileID: 0}
   backPanel: {fileID: 0}
+--- !u!114 &6301242591259960986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992972878748501695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a63ec24fff4b46044b45ca64b45b04ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BtnClickSound
+  audioSource: {fileID: 0}
+  clickClip: {fileID: 8300000, guid: 6e3295c6235e526409849e83563df70a, type: 3}
+  button: {fileID: 0}
 --- !u!222 &7887996988564565030
 CanvasRenderer:
   m_ObjectHideFlags: 0

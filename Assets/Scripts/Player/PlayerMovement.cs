@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private SpriteRenderer spriteRenderer;
 
+    [SerializeField] private PlayerAudio playerAudio;
+
     private float facingDirection = 1f;
     public float FacingDirection => facingDirection;
 
@@ -17,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (Time.timeScale == 0f) return;
+        if (Time.timeScale == 0f) return; //aduio related
         moveInput = 0f;
         if (AnyKeyHeld(playerData.RightKeys))
         {
@@ -60,6 +62,8 @@ public class PlayerMovement : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
             rb.AddForce(Vector2.up * playerData.SwimUpForce, ForceMode2D.Impulse);
             swimRequested = false;
+
+            playerAudio.PlaySfx(playerData.SwimClip);
         }
     }
     private bool AnyKeyHeld(KeyCode[] keys)
