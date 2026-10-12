@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
         if (gameEnded) return; //guarda por si mi pez gana y en ese mismo momento muere
         gameEnded = true;
         gameResult.SetResult(won);
-        Invoke(nameof(LoadGameOver),0.5f);
+        Invoke(nameof(LoadGameOver),1.5f);
     }
     private void LoadGameOver()
     {

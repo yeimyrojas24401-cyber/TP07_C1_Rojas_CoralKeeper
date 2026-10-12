@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private PlayerAudio playerAudio;
 
+    [SerializeField] private PlayerHealth playerHealth;
+
     private float facingDirection = 1f;
     public float FacingDirection => facingDirection;
 
@@ -17,6 +19,14 @@ public class PlayerMovement : MonoBehaviour
     private bool diveHeld;
     float swimTimer;
 
+    private void OnEnable()
+    {
+        playerHealth.OnDied += HandleDied;
+    }
+    private void OnDisable()
+    {
+        if (playerHealth != null) playerHealth.OnDied -= HandleDied;
+    }
     private void Update()
     {
         if (Time.timeScale == 0f) return; //aduio related
@@ -65,6 +75,11 @@ public class PlayerMovement : MonoBehaviour
 
             playerAudio.PlaySfx(playerData.SwimClip);
         }
+    }
+    private void HandleDied()
+    {
+        rb.linearVelocity = new Vector2(0f, 0f);
+        enabled = false;
     }
     private bool AnyKeyHeld(KeyCode[] keys)
     {

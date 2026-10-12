@@ -14,6 +14,7 @@ public class PlayerHealth : MonoBehaviour
 
 
     public event UnityAction<int> OnHealthChanged;
+    public event UnityAction OnTakeDamage;
     public event UnityAction OnDied;
 
     private void Start()
@@ -52,6 +53,8 @@ public class PlayerHealth : MonoBehaviour
         playerAudio.PlaySfx(playerData.HurtClip);
 
         OnHealthChanged?.Invoke(CurrentHealth);
+        OnTakeDamage?.Invoke();
+
         Debug.Log($"Vida: {currentHealth}");
         if (currentHealth <= 0)
         {

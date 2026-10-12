@@ -10,8 +10,17 @@ public class PlayerShooter : MonoBehaviour
 
     [SerializeField] private PlayerAudio playerAudio;
 
-    private float shootTimer;
+    [SerializeField] private PlayerHealth playerHealth;
 
+    private float shootTimer;
+    private void OnEnable()
+    {
+        playerHealth.OnDied += HandleDied;
+    }
+    private void OnDisable()
+    {
+        if (playerHealth != null) playerHealth.OnDied -= HandleDied;
+    }
     private void Update()
     {
         if (Time.timeScale == 0f) return; //audio related
@@ -21,6 +30,11 @@ public class PlayerShooter : MonoBehaviour
             Shoot();
             shootTimer = playerData.TimeBetweenShoots / playerSymbiosis.FireRateMultiplier;
         }
+    }
+
+    private void HandleDied()
+    {
+        enabled = false;
     }
     private bool AnyKeyHeld(KeyCode[] keys)
     {

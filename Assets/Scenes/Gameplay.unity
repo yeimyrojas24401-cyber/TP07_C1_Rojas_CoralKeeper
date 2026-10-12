@@ -3993,6 +3993,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoralFragment (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8460803584283248374, guid: 3adf790b927d2bb4bbbda949835106f2, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4158,14 +4162,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8313726, g: 0.5294118, b: 0.6627451, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -6578955494073195910, guid: 6c37e1368c73f2d4db1947e3f3dc54a4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4364,7 +4368,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &466616680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5064,14 +5068,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8313726, g: 0.5294118, b: 0.6627451, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -6578955494073195910, guid: 6c37e1368c73f2d4db1947e3f3dc54a4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5139,14 +5143,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8313726, g: 0.5294118, b: 0.6627451, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -6578955494073195910, guid: 6c37e1368c73f2d4db1947e3f3dc54a4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5863,14 +5867,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8313726, g: 0.5294118, b: 0.6627451, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -977269882, guid: 6c37e1368c73f2d4db1947e3f3dc54a4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6751,14 +6755,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8313726, g: 0.5294118, b: 0.6627451, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -6578955494073195910, guid: 6c37e1368c73f2d4db1947e3f3dc54a4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7629,10 +7633,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2102551353950900867, guid: 25a09cb2150966643a225d6d38320032, type: 3}
-      propertyPath: pickupClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 11d3c2843619a914392be476913306ed, type: 3}
     - target: {fileID: 5467977438074955353, guid: 25a09cb2150966643a225d6d38320032, type: 3}
       propertyPath: m_Name
       value: PlanktonPickable
@@ -7643,7 +7643,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6043420914011428113, guid: 25a09cb2150966643a225d6d38320032, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.56
+      value: -4.33
       objectReference: {fileID: 0}
     - target: {fileID: 6043420914011428113, guid: 25a09cb2150966643a225d6d38320032, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7696,7 +7696,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4618630958608856256, guid: 3adf790b927d2bb4bbbda949835106f2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.93
+      value: 0.646
       objectReference: {fileID: 0}
     - target: {fileID: 4618630958608856256, guid: 3adf790b927d2bb4bbbda949835106f2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7730,10 +7730,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5937356411663555137, guid: 3adf790b927d2bb4bbbda949835106f2, type: 3}
-      propertyPath: pickupClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 3ab3c4acb6718184d96175c0cb191bf0, type: 3}
     - target: {fileID: 7249204558719339348, guid: 3adf790b927d2bb4bbbda949835106f2, type: 3}
       propertyPath: m_Name
       value: CoralFragment
@@ -7751,17 +7747,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6553536341824655755, guid: c4d9fb3b3a9eb2c42b613cda217a99e6, type: 3}
-      propertyPath: pickupClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 605a844c26066c84c9cf3c6b44f00d75, type: 3}
     - target: {fileID: 6753132382548964775, guid: c4d9fb3b3a9eb2c42b613cda217a99e6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.1
       objectReference: {fileID: 0}
     - target: {fileID: 6753132382548964775, guid: c4d9fb3b3a9eb2c42b613cda217a99e6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.07
+      value: -4.23
       objectReference: {fileID: 0}
     - target: {fileID: 6753132382548964775, guid: c4d9fb3b3a9eb2c42b613cda217a99e6, type: 3}
       propertyPath: m_LocalPosition.z

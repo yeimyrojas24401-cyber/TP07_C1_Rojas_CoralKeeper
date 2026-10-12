@@ -38,6 +38,9 @@ public class PlayerDataSo : ScriptableObject
     [SerializeField] private float blinkInterval = 0.1f;
     public float BlinkInterval => blinkInterval;
 
+    [SerializeField] private float damageAnimationDuration = 0.4f;
+    public float DamageAnimationDuration => damageAnimationDuration;
+
     [Header("Shooting")]
     [SerializeField] private KeyCode[] shootKeys = { KeyCode.J, KeyCode.Mouse0 };
     public KeyCode[] ShootKeys => shootKeys;
@@ -65,4 +68,5 @@ public class PlayerDataSo : ScriptableObject
     public AudioClip ShootClip => shootClip;
     [SerializeField] private AudioClip hurtClip;
     public AudioClip HurtClip => hurtClip;
+
 }
