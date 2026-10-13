@@ -13,9 +13,13 @@ public class UIGameOverMenu : MonoBehaviour
     [SerializeField] private Button btnRetry;
     [SerializeField] private Button btnMain;
 
+    [SerializeField] private Image panelBackground;
+    [SerializeField] private Sprite winBackground;
+    [SerializeField] private Sprite loseBackground;
+
     private void Start()
     {
-        result.text = gameResultData.Won ? "¡Arrecife restaurado!" : "Game Over";
+        panelBackground.sprite = gameResultData.Won ? winBackground : loseBackground;
         fragments.text = $"Fragmentos: {coralProgressData.CollectedFragments}/{levelData.RequiredFragments}";
         btnRetry.onClick.AddListener(OnBtnRetryClicked);
         btnMain.onClick.AddListener(OnBtnMainClicked);
