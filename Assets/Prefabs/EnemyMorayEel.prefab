@@ -11,10 +11,12 @@ GameObject:
   - component: {fileID: 5337780682186393696}
   - component: {fileID: 944200111652817087}
   - component: {fileID: 7921821427154786760}
+  - component: {fileID: 7822811010835149135}
   - component: {fileID: 1558489301534628216}
   - component: {fileID: 2773824286224558755}
   - component: {fileID: 7104920569944950447}
   - component: {fileID: 4220036392107974782}
+  - component: {fileID: 2126473642254466991}
   m_Layer: 7
   m_Name: EnemyMorayEel
   m_TagString: Untagged
@@ -32,7 +34,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 91.73, y: -3.99, z: 0}
-  m_LocalScale: {x: 2, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7591011680439091042}
@@ -69,6 +71,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   enemyData: {fileID: 11400000, guid: 876bed098340a7e4cbcc1e5f230bef03, type: 2}
+--- !u!114 &7822811010835149135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2188504725730297485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23fe07bd27a964d49964bc098f7d538e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MorayEelAnimation
+  morayEelChase: {fileID: 944200111652817087}
+  animator: {fileID: 2126473642254466991}
 --- !u!114 &1558489301534628216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,9 +146,9 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 3228328894509002877, guid: f29a1d382b833ea4dafe11e55cb7882d, type: 3}
-  m_Color: {r: 0.14115329, g: 0.735849, b: 0.34847835, a: 1}
-  m_FlipX: 0
+  m_Sprite: {fileID: -4447405302860204656, guid: 049b82f169c15964490f2e83c2049cde, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -205,14 +221,36 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.81, y: 1.16}
+    oldSize: {x: 4, y: 1.6015625}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.81, y: 1.16}
+  m_Size: {x: 3.7, y: 1}
   m_EdgeRadius: 0
+--- !u!95 &2126473642254466991
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2188504725730297485}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b3b14e69f8892d64db64e526e4bf6477, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5015637718534976460
 GameObject:
   m_ObjectHideFlags: 0

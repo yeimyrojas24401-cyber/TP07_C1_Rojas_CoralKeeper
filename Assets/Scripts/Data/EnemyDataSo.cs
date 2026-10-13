@@ -5,8 +5,8 @@ public class EnemyDataSo : ScriptableObject
     [Header("General Settings")]
     [SerializeField] private int maxHealth = 4;
     public int MaxHealth => maxHealth;
-    [SerializeField] private ParticleSystem deathVfx;
-    public ParticleSystem DeathVfx => deathVfx;
+    [SerializeField] private GameObject deathVfx;
+    public GameObject DeathVfx => deathVfx;
 
     [Header("Starfish patrol general Settings")]
     [SerializeField] private float moveSpeed = 1;

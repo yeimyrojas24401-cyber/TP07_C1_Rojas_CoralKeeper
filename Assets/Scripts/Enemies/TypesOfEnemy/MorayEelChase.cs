@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 public class MorayEelChase : MonoBehaviour
 {
-private enum MorayEelState
+public enum MorayEelState
 {
     Idle,
     Chase,
@@ -16,6 +16,7 @@ private enum MorayEelState
     private Vector2 homePosition;
     private Transform target;
     private MorayEelState currentState = MorayEelState.Idle;
+    public MorayEelState CurrentState => currentState;
 
     private const float ArriveThreshold = 0.1f;
 
