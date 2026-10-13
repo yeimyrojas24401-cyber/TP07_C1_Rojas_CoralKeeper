@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: cb34c455d5615d441af1166392ea1559
+guid: 4d0e19f46f3b06545abf1d859e4789db
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1209617755592553647
-    second: MorayEel_cave_bigger_0
+      213: -4552210620372171929
+    second: cavefront_2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MorayEel_cave_bigger_0
+      name: cavefront_2_0
       rect:
         serializedVersion: 2
-        x: 191
+        x: 41
         y: 0
-        width: 589
-        height: 517
+        width: 739
+        height: 625
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 15b86e36f03963fe0800000000000000
-      internalID: -1209617755592553647
+      spriteID: 763c4f53f8c43d0c0800000000000000
+      internalID: -4552210620372171929
       vertices: []
       indices: 
       edges: []
@@ -174,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      MorayEel_cave_bigger_0: -1209617755592553647
+      cavefront_2_0: -4552210620372171929
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,13 +1,14 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    private const float WinGameOverDelay = 3.5f;
+    private const float LoseGameOverDelay = 1.5f;
+
     [SerializeField] private CoralProgressSo coralProgress;
     [SerializeField] private LevelGoal levelGoal;
     [SerializeField] private GameResultSo gameResult;
-    [SerializeField] private TMP_Text winText;
     [SerializeField] private PlayerHealth playerHealth;
 
     private bool gameEnded;
@@ -26,8 +27,10 @@ public class GameManager : MonoBehaviour
     private void OnDisable()
     {
         if (levelGoal != null)
-        levelGoal.OnReefRestored -= HandleReefRestored;
-        if(playerHealth != null)
+        {
+            levelGoal.OnReefRestored -= HandleReefRestored;
+        }
+        if (playerHealth != null)
         {
             playerHealth.OnDied -= HandlePlayerDied;
         }
@@ -45,7 +48,7 @@ public class GameManager : MonoBehaviour
         if (gameEnded) return; //guarda por si mi pez gana y en ese mismo momento muere
         gameEnded = true;
         gameResult.SetResult(won);
-        Invoke(nameof(LoadGameOver),1.5f);
+        Invoke(nameof(LoadGameOver), won ? WinGameOverDelay : LoseGameOverDelay);
     }
     private void LoadGameOver()
     {

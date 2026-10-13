@@ -6,8 +6,6 @@ public class LevelGoal : MonoBehaviour
 {
     [SerializeField] private CoralProgressSo coralProgress;
     [SerializeField] private LevelDataSo levelData;
-    [SerializeField] private SpriteRenderer spriteRenderer;
-    [SerializeField] private Sprite restoredSprite;
     [SerializeField] private TMP_Text messageText;
     private bool restored;
     public event UnityAction OnReefRestored;
@@ -25,7 +23,6 @@ public class LevelGoal : MonoBehaviour
         else
         {
             restored = true;
-            spriteRenderer.sprite = restoredSprite;
             OnReefRestored?.Invoke();
         }
     }
