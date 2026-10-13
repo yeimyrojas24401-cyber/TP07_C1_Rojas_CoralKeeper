@@ -21,9 +21,13 @@ public class Projectile : MonoBehaviour
             {
                 enemyHealth.TakeDamage(projectileData.Damage);
             }
-            if(projectileData.HitVfx != null)
+            else if (hit.collider.TryGetComponent(out PlayerHealth playerHealth))
             {
-            Instantiate(projectileData.HitVfx, hit.point, Quaternion.identity);
+                playerHealth.TakeHit();
+            }
+            if (projectileData.HitVfx != null)
+            {
+                Instantiate(projectileData.HitVfx, hit.point, Quaternion.identity);
 
             }
             Destroy(gameObject);
@@ -35,5 +39,6 @@ public class Projectile : MonoBehaviour
     public void Init(Vector2 dir)
     {
         direction = dir;
+        transform.right = direction;
     }
 }

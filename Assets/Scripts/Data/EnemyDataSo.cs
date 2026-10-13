@@ -21,4 +21,8 @@ public class EnemyDataSo : ScriptableObject
     [SerializeField] private float returnSpeed = 2.0f;
     public float ReturnSpeed => returnSpeed;
 
+    [Header("Lionfish")]
+    [SerializeField] private float timeBetweenShoots = 1.5f;
+    public float TimeBetweenShoots => timeBetweenShoots;
+
 }

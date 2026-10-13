@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 953bd447ef4cbde49ac437eccd6655b0, type: 3}
-  m_Name: ProjectileData
+  m_Name: ProjectileSpineData
   m_EditorClassIdentifier: Assembly-CSharp::ProjectileDataSo
   speed: 8
-  lifeTime: 2
+  lifeTime: 3
   hitLayers:
     serializedVersion: 2
-    m_Bits: 640
+    m_Bits: 64
   damage: 1
-  hitVfx: {fileID: 3039207280708335173, guid: b5eb1b527aa88004bb10f07a83b35972, type: 3}
+  hitVfx: {fileID: 0}
