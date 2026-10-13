@@ -18,4 +18,4 @@ MonoBehaviour:
   detectRange: 5
   chaseSpeed: 3.5
   returnSpeed: 2
-  timeBetweenShoots: 1.5
+  timeBetweenShoots: 0.5
