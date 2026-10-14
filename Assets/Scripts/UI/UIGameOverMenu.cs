@@ -8,7 +8,6 @@ public class UIGameOverMenu : MonoBehaviour
     [SerializeField] private GameResultSo gameResultData;
     [SerializeField] private CoralProgressSo coralProgressData;
     [SerializeField] private LevelDataSo levelData;
-    [SerializeField] private TMP_Text result;
     [SerializeField] private TMP_Text fragments;
     [SerializeField] private Button btnRetry;
     [SerializeField] private Button btnMain;
@@ -20,7 +19,7 @@ public class UIGameOverMenu : MonoBehaviour
     private void Start()
     {
         panelBackground.sprite = gameResultData.Won ? winBackground : loseBackground;
-        fragments.text = $"Fragmentos: {coralProgressData.CollectedFragments}/{levelData.RequiredFragments}";
+        fragments.text = $"FRAGMENTS: {coralProgressData.CollectedFragments}/{levelData.RequiredFragments}";
         btnRetry.onClick.AddListener(OnBtnRetryClicked);
         btnMain.onClick.AddListener(OnBtnMainClicked);
     }
