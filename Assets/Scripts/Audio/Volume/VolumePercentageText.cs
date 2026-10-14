@@ -9,7 +9,6 @@ public class VolumePercentageText : MonoBehaviour
 
     private void OnEnable()
     {
-        Debug.Log($"{name} → data: {audioData}, text: {percentageText}", this);
         UpdateText(audioData.GetVolume(channel));
         switch(channel)
         {

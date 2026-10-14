@@ -15,9 +15,9 @@ public class PlayerMovement : MonoBehaviour
     public float FacingDirection => facingDirection;
 
     private float moveInput;
-    bool swimRequested;
+    private bool swimRequested;
     private bool diveHeld;
-    float swimTimer;
+    private float swimTimer;
 
     private void OnEnable()
     {

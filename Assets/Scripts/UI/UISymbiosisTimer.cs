@@ -1,6 +1,5 @@
-using UnityEngine;
 using TMPro;
-using System;
+using UnityEngine;
 
 public class UISymbiosisTimer : MonoBehaviour
 {
@@ -30,7 +29,7 @@ public class UISymbiosisTimer : MonoBehaviour
 
     private void HandleTimeChanged(float time)
     {
-        timerText.text = $"Simbiosis {Mathf.CeilToInt(time)}";
+        timerText.text = $"Symbiosis {Mathf.CeilToInt(time)}";
     }
 
 }

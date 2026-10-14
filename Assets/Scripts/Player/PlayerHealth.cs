@@ -55,12 +55,11 @@ public class PlayerHealth : MonoBehaviour
         OnHealthChanged?.Invoke(CurrentHealth);
         OnTakeDamage?.Invoke();
 
-        Debug.Log($"Vida: {currentHealth}");
+
         if (currentHealth <= 0)
         {
             isDead = true;
             OnDied?.Invoke();
-            Debug.Log("El pez murio");
             return;
         }
         invulnerabilityTimer = playerData.InvulnerabilityDuration;

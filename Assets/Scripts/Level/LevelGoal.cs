@@ -17,7 +17,7 @@ public class LevelGoal : MonoBehaviour
         int missing = levelData.RequiredFragments - coralProgress.CollectedFragments;
         if (missing > 0)
         {
-            messageText.text = $"Te faltan {missing} fragmentos";
+            messageText.text = $" {missing} fragments missing";
             return;
         }
         else
