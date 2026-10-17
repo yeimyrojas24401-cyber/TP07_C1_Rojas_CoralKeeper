@@ -20,16 +20,6 @@ public class SliderVolume : MonoBehaviour
 
     private void OnSliderVolumeChanged(float value)
     {
-        switch(channel)
-        {
-            case AudioChannel.Master: audioData.SetMasterVolume(value);
-                break;
-            case AudioChannel.Background: audioData.SetBackgroundVolume(value);
-                break;
-            case AudioChannel.SFX: audioData.SetSfxVolume(value);
-                break;
-            case AudioChannel.UI: audioData.SetUiVolume(value);
-                break;
-        }
+        audioData.SetVolumeOf(channel, value);
     }
 }

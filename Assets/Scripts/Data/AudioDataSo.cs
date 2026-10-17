@@ -32,40 +32,39 @@ public class AudioDataSo : ScriptableObject
     private void OnEnable()
     {
         LoadVolumeSettings();
-    }   
-    public void SetMasterVolume(float value)
+    }
+    public void SetVolumeOf(AudioChannel channel, float volume)
     {
-        masterVolume = value;
-        ApplyToMixer(MasterKey, masterVolume);
-        OnMasterVolumeChanged?. Invoke(masterVolume);
-        SaveVolumeSettings();
-    }    
-    public void SetBackgroundVolume(float value)
+        switch (channel)
+        {
+            case AudioChannel.Master:
+                SetVolume(ref masterVolume, volume, MasterKey, OnMasterVolumeChanged);
+                break;
+            case AudioChannel.Background:
+                SetVolume(ref backgroundVolume, volume, BackgroundKey, OnBackgroundVolumeChanged);
+                break;
+            case AudioChannel.SFX:
+                SetVolume(ref sfxVolume, volume, SFXKey, OnSfxVolumeChanged);
+                break;
+            case AudioChannel.UI:
+                SetVolume(ref uiVolume, volume, UIKey, OnUiVolumeChanged);
+                break;
+        }
+    }
+    private void SetVolume(ref float volumeField, float volume, string key, UnityAction<float> onVolumeChanged)
     {
-        backgroundVolume = value;
-        ApplyToMixer(BackgroundKey, backgroundVolume);
-        OnBackgroundVolumeChanged?. Invoke(backgroundVolume);
-        SaveVolumeSettings();
-    } 
-    public void SetSfxVolume(float value)
-    {
-        sfxVolume = value;
-        ApplyToMixer(SFXKey, sfxVolume);
-        OnSfxVolumeChanged?. Invoke(sfxVolume);
+        volumeField = volume;
+
+        ApplyToMixer(key, volume);
+        onVolumeChanged?.Invoke(volume);
         SaveVolumeSettings();
     }
-    public void SetUiVolume(float value)
-    {
-        uiVolume = value;
-        ApplyToMixer(UIKey, uiVolume);
-        OnUiVolumeChanged?. Invoke(uiVolume);
-        SaveVolumeSettings();
-    }
+
     private void ApplyToMixer(string key, float value)
     {
         mixer.SetFloat(key, Mathf.Log10(Mathf.Max(value, MinVolume)) * 20f);
     }
-    public void SaveVolumeSettings()
+    private void SaveVolumeSettings()
     {
         PlayerPrefs.SetFloat(MasterKey, masterVolume);
         PlayerPrefs.SetFloat(BackgroundKey, backgroundVolume);
@@ -74,7 +73,7 @@ public class AudioDataSo : ScriptableObject
 
         PlayerPrefs.Save();
     }
-    public void LoadVolumeSettings()
+    private void LoadVolumeSettings()
     {
         masterVolume = PlayerPrefs.GetFloat(MasterKey, 1f);
         backgroundVolume = PlayerPrefs.GetFloat(BackgroundKey, 0.4f);
@@ -90,13 +89,13 @@ public class AudioDataSo : ScriptableObject
     }
     public float GetVolume(AudioChannel channel)
     {
-        switch(channel)
+        switch (channel)
         {
             case AudioChannel.Master: return MasterVolume;
             case AudioChannel.Background: return BackgroundVolume;
             case AudioChannel.SFX: return SfxVolume;
             case AudioChannel.UI: return UiVolume;
-                default: return 1f;
+            default: return 1f;
         }
 
     }
