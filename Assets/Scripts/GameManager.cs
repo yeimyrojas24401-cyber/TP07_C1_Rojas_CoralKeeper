@@ -45,7 +45,9 @@ public class GameManager : MonoBehaviour
     }
     private void EndGame(bool won)
     {
-        if (gameEnded) return; //guarda por si mi pez gana y en ese mismo momento muere
+        if (gameEnded) 
+            return; //guarda por si mi pez gana y en ese mismo momento muere
+
         gameEnded = true;
         gameResult.SetResult(won);
         Invoke(nameof(LoadGameOver), won ? WinGameOverDelay : LoseGameOverDelay);
