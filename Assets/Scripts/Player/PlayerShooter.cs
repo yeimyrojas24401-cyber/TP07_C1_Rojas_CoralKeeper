@@ -23,7 +23,7 @@ public class PlayerShooter : MonoBehaviour
     }
     private void Update()
     {
-        if (Time.timeScale == 0f) return; //audio related
+        if (Time.timeScale == 0f) return; // en pausa no lee inputs
         shootTimer -= Time.deltaTime;
         if (AnyKeyHeld(playerData.ShootKeys) && shootTimer <= 0)
         {

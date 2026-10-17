@@ -16,7 +16,7 @@ public class ParallaxController : MonoBehaviour
     }
     private void LateUpdate()
     {
-        Vector3 cameraDelta = cameraTransform.position - cameraStartPosition;   // cuánto se movió la cámara
+        Vector3 cameraDelta = cameraTransform.position - cameraStartPosition;   // lo que se movio la camara
         foreach (ParallaxLayer layer in layers)
         {
             layer.Apply(cameraDelta);                                          // cada capa se mueve su parte

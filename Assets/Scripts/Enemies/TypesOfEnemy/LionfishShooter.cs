@@ -26,7 +26,7 @@ public class LionfishShooter : MonoBehaviour
         Vector2 direction = (targetPosition - (Vector2)(firePoint.position)).normalized;
         spriteRenderer.flipX = direction.x < 0f;
         Projectile spine = Instantiate(spinePrefab, firePoint.position, Quaternion.identity);
-        animator.Play(AnimatorStates.Attack, 0, 0f);
+        animator.Play(AnimatorStates.Attack, 0, 0f); 
         spine.Init(direction);
     }
     private void OnDrawGizmosSelected()
