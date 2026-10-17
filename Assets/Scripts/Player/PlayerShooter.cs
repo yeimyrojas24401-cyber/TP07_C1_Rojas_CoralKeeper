@@ -11,6 +11,7 @@ public class PlayerShooter : MonoBehaviour
     [SerializeField] private PlayerAudio playerAudio;
 
     [SerializeField] private PlayerHealth playerHealth;
+    [SerializeField] private GameManager gameManager;
 
     private float shootTimer;
     private void OnEnable()
@@ -23,7 +24,7 @@ public class PlayerShooter : MonoBehaviour
     }
     private void Update()
     {
-        if (Time.timeScale == 0f) return; // en pausa no lee inputs
+        if (gameManager.IsPaused) return;
         shootTimer -= Time.deltaTime;
         if (AnyKeyHeld(playerData.ShootKeys) && shootTimer <= 0)
         {

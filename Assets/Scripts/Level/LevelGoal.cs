@@ -51,7 +51,7 @@ public class LevelGoal : MonoBehaviour
 
         if (missing > 0)
         {
-            messageText.text = $" {missing} fragments missing";
+            messageText.text = $"{missing} fragments missing";
             return;
         }
 

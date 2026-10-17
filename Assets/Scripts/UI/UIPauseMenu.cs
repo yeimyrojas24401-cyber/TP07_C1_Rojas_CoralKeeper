@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class UIPauseMenu : MonoBehaviour
 {
+    [SerializeField] private GameManager gameManager;
+
     [SerializeField] private Button btnContinue;
     [SerializeField] private Button btnSettings;
     [SerializeField] private Button btnMainMenu;
@@ -12,7 +14,6 @@ public class UIPauseMenu : MonoBehaviour
     [SerializeField] private GameObject panelPause;
     [SerializeField] private GameObject panelSettings;
 
-    private bool isPause = false;
 
     private void Awake()
     {
@@ -21,10 +22,19 @@ public class UIPauseMenu : MonoBehaviour
         btnMainMenu.onClick.AddListener(OnBtnMainMenuClicked);
     }
 
+    private void OnEnable()
+    {
+        gameManager.OnPauseChanged += HandlePauseChanged;
+    }
+
+    private void OnDisable()
+    {
+        if(gameManager != null)
+        gameManager.OnPauseChanged -= HandlePauseChanged;
+    }
 
     private void Start()
     {
-        Time.timeScale = 1f;
         panelPause.SetActive(false);
         panelSettings.SetActive(false);
 
@@ -42,15 +52,19 @@ public class UIPauseMenu : MonoBehaviour
         btnSettings.onClick.RemoveListener(OnBtnSettingsClicked);
         btnMainMenu.onClick.RemoveListener(OnBtnMainMenuClicked);
     }
+
     private void OnBtnContinueClicked()
     {
-        isPause = !isPause;
-        panelPause.SetActive(isPause);
-        if(!isPause)
+        gameManager.SetPaused(!gameManager.IsPaused);
+    }
+
+    private void HandlePauseChanged(bool isPaused)
+    {
+        panelPause.SetActive(isPaused);
+        if(!isPaused)
         {
             panelSettings.SetActive(false);
         }
-        Time.timeScale = isPause ? 0f : 1f;
         EventSystem.current.SetSelectedGameObject(null);
     }
 
@@ -62,7 +76,7 @@ public class UIPauseMenu : MonoBehaviour
 
     private void OnBtnMainMenuClicked()
     {
-        Time.timeScale = 1f;
+        gameManager.SetPaused(false);
         SceneManager.LoadScene("MainMenu");
     }
 

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -12,18 +13,25 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PlayerHealth playerHealth;
 
     private bool gameEnded;
+    private bool isPaused;
+    public bool IsPaused => isPaused;
+    public event UnityAction<bool> OnPauseChanged;
 
 
     private void Start()
     {
         coralProgress.ResetProgress();
         gameResult.ResetResult();
+
+        Time.timeScale = 1.0f;
     }
+
     private void OnEnable()
     {
         levelGoal.OnReefRestored += HandleReefRestored;
         playerHealth.OnDied += HandlePlayerDied;
     }
+
     private void OnDisable()
     {
         if (levelGoal != null)
@@ -35,6 +43,17 @@ public class GameManager : MonoBehaviour
             playerHealth.OnDied -= HandlePlayerDied;
         }
     }
+
+    public void SetPaused(bool paused)
+    {
+        if (paused == isPaused)
+            return;
+        isPaused = paused;
+        Time.timeScale = isPaused ? 0f : 1f;
+        OnPauseChanged?.Invoke(IsPaused);
+
+    }
+
     private void HandleReefRestored()
     {
         EndGame(true);
@@ -43,6 +62,7 @@ public class GameManager : MonoBehaviour
     {
         EndGame(false);
     }
+
     private void EndGame(bool won)
     {
         if (gameEnded) 
@@ -52,6 +72,7 @@ public class GameManager : MonoBehaviour
         gameResult.SetResult(won);
         Invoke(nameof(LoadGameOver), won ? WinGameOverDelay : LoseGameOverDelay);
     }
+
     private void LoadGameOver()
     {
         SceneManager.LoadScene("GameOver");

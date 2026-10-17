@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private PlayerHealth playerHealth;
 
+    [SerializeField] private GameManager gameManager;
     private float facingDirection = 1f;
     public float FacingDirection => facingDirection;
 
@@ -29,7 +30,8 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
-        if (Time.timeScale == 0f) return; //en pausa no se lee el input
+        if (gameManager.IsPaused)
+            return;
         moveInput = 0f;
         if (AnyKeyHeld(playerData.RightKeys))
         {
