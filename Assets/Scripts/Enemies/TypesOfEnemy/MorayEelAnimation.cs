@@ -5,9 +5,20 @@ public class MorayEelAnimation : MonoBehaviour
     [SerializeField] private MorayEelChase morayEelChase;
     [SerializeField] private Animator animator;
     private int currentState;
-    private void Update()
+
+    private void OnEnable()
     {
-        switch (morayEelChase.CurrentState)
+        morayEelChase.OnStateChanged += HandleMorayEelAnimation;
+    }
+
+    private void OnDisable()
+    {
+        morayEelChase.OnStateChanged -= HandleMorayEelAnimation;
+    }
+
+    private void HandleMorayEelAnimation(MorayEelChase.MorayEelState state)
+    {
+        switch (state)
         {
             case MorayEelChase.MorayEelState.Idle:
                 PlayAnimation(AnimatorStates.Idle);

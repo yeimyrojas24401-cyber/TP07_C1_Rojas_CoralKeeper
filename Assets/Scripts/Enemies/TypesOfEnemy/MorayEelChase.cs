@@ -1,12 +1,14 @@
 using UnityEngine;
+using UnityEngine.Events;
 public class MorayEelChase : MonoBehaviour
 {
-public enum MorayEelState
-{
-    Idle,
-    Chase,
-    Return
-}
+    public enum MorayEelState
+    {
+        Idle,
+        Chase,
+        Return
+    }
+
     [SerializeField] private EnemyDataSo morayEelData;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private SpriteRenderer spriteRenderer;
@@ -19,22 +21,25 @@ public enum MorayEelState
 
     private const float ArriveThreshold = 0.1f;
 
+    public event UnityAction<MorayEelState> OnStateChanged;
+
     private void Start()
     {
         homePosition = rb.position;
     }
-    private void FixedUpdate()
+    private void FixedUpdate() //state Pattern
     {
         Collider2D hit = Physics2D.OverlapCircle(homePosition, morayEelData.DetectRange, playerLayer);
 
-       if(hit != null)
+        if (hit != null)
         {
-            currentState = MorayEelState.Chase;
             target = hit.transform;
+            ChangeState(MorayEelState.Chase);
         }
-        else if (currentState == MorayEelState.Chase)        
+
+        else if (currentState == MorayEelState.Chase)
         {
-            currentState = MorayEelState.Return;
+            ChangeState(MorayEelState.Return);
         }
 
         switch (currentState)
@@ -47,25 +52,34 @@ public enum MorayEelState
                 break;
             case MorayEelState.Return:
                 MoveTo(homePosition, morayEelData.ReturnSpeed);
-                if (Vector2.Distance(rb.position, homePosition) < ArriveThreshold)  
+                if (Vector2.Distance(rb.position, homePosition) < ArriveThreshold)
                 {
-                    rb.linearVelocity = Vector2.zero;
-                    currentState = MorayEelState.Idle;
+                    ChangeState(MorayEelState.Idle);
                 }
                 break;
         }
     }
+
     private void MoveTo(Vector2 destination, float speed)
     {
         Vector2 direction = (destination - rb.position).normalized;
         rb.linearVelocity = direction * speed;
         spriteRenderer.flipX = direction.x < 0f;
     }
-    //adding so i can visualizar el tamano de mi circulo en mi scene
-    private void OnDrawGizmosSelected()                      
+    //adding so i can visualizar el tamano de mi circulo en mi escena
+    private void OnDrawGizmosSelected()
     {
         if (morayEelData == null) return;
         Vector2 center = Application.isPlaying ? homePosition : (Vector2)transform.position;
         Gizmos.DrawWireSphere(center, morayEelData.DetectRange);
+    }
+
+    private void ChangeState(MorayEelState newState)
+    {
+        if (currentState == newState)
+            return;
+
+        currentState = newState;
+        OnStateChanged?.Invoke(currentState);
     }
 }

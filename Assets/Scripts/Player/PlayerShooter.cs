@@ -36,12 +36,14 @@ public class PlayerShooter : MonoBehaviour
     {
         enabled = false;
     }
+
     private bool AnyKeyHeld(KeyCode[] keys)
     {
         foreach (KeyCode key in keys)
             if (Input.GetKey(key)) return true;
         return false;
     }
+
     private void Shoot()
     {
         float dir = playerMovement.FacingDirection;
