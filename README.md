@@ -106,4 +106,8 @@ During the development of this project, artificial intelligence tools were used 
 Link Itchio https://yeimy-rojas-midnightbaker.itch.io/coral-keeper
 
 Contact:
-Yeimy Rojas The Midnight Baker. https://www.artstation.com/yeimy24401
+Yeimy Rojas The Midnight Baker. 
+https://www.artstation.com/yeimy24401
+www.linkedin.com/in/yeimy-alexandra-rojas-castellanos-midnightbaker
+https://orcid.org/0009-0000-7481-0223
+
