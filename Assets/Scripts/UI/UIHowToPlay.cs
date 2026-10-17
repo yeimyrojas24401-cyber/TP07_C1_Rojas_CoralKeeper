@@ -12,13 +12,13 @@ public class UIHowToPlay : MonoBehaviour
     [SerializeField] private Button btnPrevious;
 
     [Header("Panels")]
-    [SerializeField] private GameObject mainMenuPanel;
+    [SerializeField] private GameObject returnPanel;
 
     private int currentPage;
     private void Awake()
     {
-        btnNext.onClick.AddListener(OnBtnNextAction);
-        btnPrevious.onClick.AddListener(OnBtnPreviousAction);
+        btnNext.onClick.AddListener(OnBtnNextClicked);
+        btnPrevious.onClick.AddListener(OnBtnPreviousClicked);
     }
     private void OnEnable()
     {
@@ -26,8 +26,8 @@ public class UIHowToPlay : MonoBehaviour
     }
     private void OnDestroy()
     {
-        btnNext.onClick.RemoveListener(OnBtnNextAction);
-        btnPrevious.onClick.RemoveListener(OnBtnPreviousAction);
+        btnNext.onClick.RemoveListener(OnBtnNextClicked);
+        btnPrevious.onClick.RemoveListener(OnBtnPreviousClicked);
     }
     private void ShowPage(int pageIndex)
     {
@@ -36,10 +36,10 @@ public class UIHowToPlay : MonoBehaviour
     }
     private void CloseHowToPlay()
     {
-        mainMenuPanel.SetActive(true);
+        returnPanel.SetActive(true);
         gameObject.SetActive(false);
     }
-    private void OnBtnNextAction()
+    private void OnBtnNextClicked()
     {
         if (currentPage == pageSprites.Length - 1)
         {
@@ -48,7 +48,7 @@ public class UIHowToPlay : MonoBehaviour
         }
         ShowPage(currentPage + 1);
     }
-    private void OnBtnPreviousAction()
+    private void OnBtnPreviousClicked()
     {
         if (currentPage == 0)
         {

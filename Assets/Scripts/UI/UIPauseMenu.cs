@@ -10,9 +10,12 @@ public class UIPauseMenu : MonoBehaviour
     [SerializeField] private Button btnContinue;
     [SerializeField] private Button btnSettings;
     [SerializeField] private Button btnMainMenu;
+    [SerializeField] private Button btnRetry;
+    [SerializeField] private Button btnHowToPlay;
 
     [SerializeField] private GameObject panelPause;
     [SerializeField] private GameObject panelSettings;
+    [SerializeField] private GameObject panelHowToPlay;
 
 
     private void Awake()
@@ -20,6 +23,8 @@ public class UIPauseMenu : MonoBehaviour
         btnContinue.onClick.AddListener(OnBtnContinueClicked);
         btnSettings.onClick.AddListener(OnBtnSettingsClicked);
         btnMainMenu.onClick.AddListener(OnBtnMainMenuClicked);
+        btnRetry.onClick.AddListener(OnBtnRetryClicked);
+        btnHowToPlay.onClick.AddListener(OnBtnHowToPlayClicked);
     }
 
     private void OnEnable()
@@ -37,6 +42,7 @@ public class UIPauseMenu : MonoBehaviour
     {
         panelPause.SetActive(false);
         panelSettings.SetActive(false);
+        panelHowToPlay.SetActive(false);
 
     }
     private void Update()
@@ -51,6 +57,9 @@ public class UIPauseMenu : MonoBehaviour
         btnContinue.onClick.RemoveListener(OnBtnContinueClicked);
         btnSettings.onClick.RemoveListener(OnBtnSettingsClicked);
         btnMainMenu.onClick.RemoveListener(OnBtnMainMenuClicked);
+        btnRetry.onClick.RemoveListener(OnBtnRetryClicked);
+        btnHowToPlay.onClick.RemoveListener(OnBtnHowToPlayClicked);
+
     }
 
     private void OnBtnContinueClicked()
@@ -64,6 +73,7 @@ public class UIPauseMenu : MonoBehaviour
         if(!isPaused)
         {
             panelSettings.SetActive(false);
+            panelHowToPlay.SetActive(false);
         }
         EventSystem.current.SetSelectedGameObject(null);
     }
@@ -72,12 +82,23 @@ public class UIPauseMenu : MonoBehaviour
     {
         panelSettings.SetActive(true);
         panelPause.SetActive(false);
+        panelHowToPlay.SetActive(false);
     }
 
     private void OnBtnMainMenuClicked()
     {
         gameManager.SetPaused(false);
         SceneManager.LoadScene("MainMenu");
+    }
+    private void OnBtnRetryClicked()
+    {
+        SceneManager.LoadScene("Gameplay");
+    }
+    private void OnBtnHowToPlayClicked()
+    {
+        panelHowToPlay.SetActive(true);
+        panelPause.SetActive(false);
+        panelSettings.SetActive(false);
     }
 
 }
