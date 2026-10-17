@@ -1,6 +1,6 @@
 # Coral Keeper — Unity Project
 
-Coral Keeper is a 2D underwater platformer set on an Indo-Pacific reef. You play as a little clownfish who must collect coral fragments and bring them back to the bleached reef to restore it. Swim, dive, and shoot bubbles past starfish, lionfish, and a territorial moray eel. The biology lives in the setting, the collectables, the enemies, and the goal. Made with Unity 6 (6000.3.21f1, URP 2D) for Image Campus. It includes one handcrafted level and a full menu system (Main Menu, Settings, How To Play, Credits, Pause Menu, Game Over screen).
+Coral Keeper is a 2D underwater platformer set on an Indo-Pacific reef. You play as a little clownfish who must collect coral fragments and bring them back to the bleached reef to restore it. Swim, dive, and shoot bubbles past starfish, lionfish, and a territorial moray eel. The biology lives in the setting, the collectables, the enemies, and the goal.
 
 ## Features
 
